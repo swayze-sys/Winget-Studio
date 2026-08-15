@@ -2,6 +2,17 @@
 
 All notable user-facing changes are documented here.
 
+## 2.02 — 2026-08-15
+
+### Discovery and provider search
+
+- Searches from **Discover apps → All sources** now start WinGet and every available additional provider concurrently.
+- Each additional provider performs its catalog search and installed-package lookup concurrently.
+- Provider failures remain isolated so successful results from other sources are preserved.
+- Chocolatey now uses a chocolate-bar symbol in the Provider column.
+- Bumped the application and installer to 2.02 so existing 2.01 installations detect the release as an update.
+- Verified the release build with all 84 automated tests.
+
 ## 2.01 — 2026-08-14
 
 ### Updates and elevation
