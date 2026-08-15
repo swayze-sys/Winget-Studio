@@ -2,9 +2,14 @@
 
 Winget Studio is a modern WinUI 3 desktop application for discovering, monitoring, installing, updating, and diagnosing Windows applications through WinGet and supported additional package providers.
 
-**Current release:** 2.04 · [Release notes](https://github.com/swayze-sys/Winget-Studio/releases/tag/v2.04) · [Deutsch](README.de.md)
+**Current release:** 2.05 · [Release notes](https://github.com/swayze-sys/Winget-Studio/releases/tag/v2.05) · [Deutsch](README.de.md)
 
 ## Highlights
+
+- Compact provider dropdown with checkboxes keeps the search row short while retaining per-provider control.
+- PowerShell Gallery discovery uses the public Gallery API with robust result parsing and clear provider status.
+- Select update-history rows, copy full diagnostics, or export every column to CSV.
+- Review and remove saved per-program update suppression rules from Settings.
 
 - Review installed and available versions in an icon grid or sortable list.
 - Select one or many updates and follow live WinGet output and progress.
@@ -30,14 +35,14 @@ Winget Studio is a modern WinUI 3 desktop application for discovering, monitorin
 
 Download the current release from [GitHub Releases](https://github.com/swayze-sys/Winget-Studio/releases/latest).
 
-- [WingetStudio-WebSetup.exe](https://github.com/swayze-sys/Winget-Studio/releases/download/v2.04/WingetStudio-WebSetup.exe) is the small online installer. Its embedded manifest uses the public `v2.04` release URLs and verifies the downloaded payload with SHA-256.
-- [WingetStudio-Setup-2.04.zip](https://github.com/swayze-sys/Winget-Studio/releases/download/v2.04/WingetStudio-Setup-2.04.zip) is the complete offline bundle. Extract it fully and run `WingetStudio-Setup.exe` from the extracted directory.
+- [WingetStudio-WebSetup.exe](https://github.com/swayze-sys/Winget-Studio/releases/download/v2.05/WingetStudio-WebSetup.exe) is the small online installer. Its embedded manifest uses the public `v2.05` release URLs and verifies the downloaded payload with SHA-256.
+- [WingetStudio-Setup-2.05.zip](https://github.com/swayze-sys/Winget-Studio/releases/download/v2.05/WingetStudio-Setup-2.05.zip) is the complete offline bundle. Extract it fully and run `WingetStudio-Setup.exe` from the extracted directory.
 
 The installer supports component checks, SHA-256 payload verification, optional dependencies, Windows uninstallation, and repair/update operation through the registered installation path.
 
 ## Updates
 
-The installed application reads `update-channel.json` next to `WingetStudio.exe`. Version 2.04 uses the public latest-release endpoint:
+The installed application reads `update-channel.json` next to `WingetStudio.exe`. Version 2.05 uses the public latest-release endpoint:
 
 `https://api.github.com/repos/swayze-sys/Winget-Studio/releases/latest`
 
@@ -45,14 +50,14 @@ The updater accepts HTTPS release assets whose filename contains `Setup` and end
 
 ### One-time update path for installed 2.01 builds
 
-The original 2.01 updater does not normalize some legacy tags correctly and can keep a downloaded setup file locked while validating a GitHub-provided digest. Version 2.04 contains the complete updater correction. To update once from 2.01, close every Winget Studio window and start exactly one instance from PowerShell with the process-only compatibility feed:
+The original 2.01 updater does not normalize some legacy tags correctly and can keep a downloaded setup file locked while validating a GitHub-provided digest. Version 2.05 contains the complete updater correction. To update once from 2.01, close every Winget Studio window and start exactly one instance from PowerShell with the process-only compatibility feed:
 
 ```powershell
-$env:WINGET_STUDIO_UPDATE_FEED='https://raw.githubusercontent.com/swayze-sys/Winget-Studio/main/update-compat-v2.01-to-v2.04.json'
+$env:WINGET_STUDIO_UPDATE_FEED='https://raw.githubusercontent.com/swayze-sys/Winget-Studio/main/update-compat-v2.01-to-v2.05.json'
 & 'C:\Program Files\Winget Studio\WingetStudio.exe'
 ```
 
-Wait for the automatic update prompt, or use **Settings → Updates → Check now** once. The environment override exists only for that PowerShell process tree; normal 2.04 starts use the regular GitHub latest-release channel again.
+Wait for the automatic update prompt, or use **Settings → Updates → Check now** once. The environment override exists only for that PowerShell process tree; normal 2.05 starts use the regular GitHub latest-release channel again.
 
 ## Privacy and local data
 
