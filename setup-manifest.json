@@ -1,0 +1,13 @@
+﻿{
+    "schemaVersion":  1,
+    "product":  "Winget Studio",
+    "version":  "2.01",
+    "architecture":  "x64",
+    "payloadUrl":  "https://downloads.example.org/winget-studio/WingetStudio-Payload-2.01.zip",
+    "sha256":  "0bfe80dd979b5b01a25f2a97906582603f03d8015884351e8593cc5e1024f3da",
+    "contentSha256":  "f879ae30b5cd1152c95e8c1be5971df5a244db53214f13ffc3cc008bcd62beca",
+    "size":  84325469,
+    "musicUrl":  "https://downloads.example.org/winget-studio/WingetStudio-Installer-Theme.mp3",
+    "musicSha256":  "eec57b6bb4d297884c16269c9b13ec30063c6f17343fd4f80c4a459455de9684",
+    "musicSize":  10229688
+}

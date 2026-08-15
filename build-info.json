@@ -1,0 +1,31 @@
+﻿{
+    "version":  "2.01",
+    "builtAt":  "2026-08-15T13:07:31.2035161+02:00",
+    "bootstrapper":  {
+                         "file":  "WingetStudio-Setup.exe",
+                         "size":  172544,
+                         "sha256":  "a725b2230d88425430ce54bfc7eb29ccd2f3a6b79b9091b4bad27f796f577890",
+                         "embeddedManifestSha256":  "916edf8ce9c7d0b72bc16620dfadee677b204064285e59d531ad9abe88b5196c"
+                     },
+    "payload":  {
+                    "file":  "WingetStudio-Payload-2.01.zip",
+                    "size":  84325469,
+                    "sha256":  "0bfe80dd979b5b01a25f2a97906582603f03d8015884351e8593cc5e1024f3da",
+                    "contentSha256":  "f879ae30b5cd1152c95e8c1be5971df5a244db53214f13ffc3cc008bcd62beca"
+                },
+    "source":  {
+                   "contentSha256":  "f879ae30b5cd1152c95e8c1be5971df5a244db53214f13ffc3cc008bcd62beca"
+               },
+    "music":  {
+                  "file":  "WingetStudio-Installer-Theme.mp3",
+                  "size":  10229688,
+                  "sha256":  "eec57b6bb4d297884c16269c9b13ec30063c6f17343fd4f80c4a459455de9684"
+              },
+    "bundle":  {
+                   "file":  "WingetStudio-Setup-2.01.zip",
+                   "size":  123886166,
+                   "sha256":  "4d8e14376194e21247cc4a816263231fa885b40c1d4f0c7565e0a90d38223eb9",
+                   "contentSha256":  "daffa424d7c73eadf9e44340bad728833898376b0f3d9ef77d5a991624f0e0b1",
+                   "offlineRuntimeIncluded":  true
+               }
+}
