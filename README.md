@@ -43,6 +43,17 @@ The installed application reads `update-channel.json` next to `WingetStudio.exe`
 
 The updater accepts HTTPS release assets whose filename contains `Setup` and ends in `.exe`. It asks for confirmation, downloads the selected setup executable, verifies it, and invokes the installer with the update flow instead of replacing individual application files.
 
+### One-time update path for installed 2.01 builds
+
+The original 2.01 updater does not normalize tags written as `v.2.02` correctly and keeps a downloaded setup file locked while validating a GitHub-provided digest. Both defects are fixed in 2.02. To exercise the built-in updater once from 2.01, close Winget Studio and start it from PowerShell with the process-only compatibility feed:
+
+```powershell
+$env:WINGET_STUDIO_UPDATE_FEED='https://raw.githubusercontent.com/swayze-sys/Winget-Studio/main/update-compat-v2.01.json'
+& 'C:\Program Files\Winget Studio\WingetStudio.exe'
+```
+
+Then use **Settings → Updates → Check now**. The environment override exists only for that PowerShell process tree; normal 2.02 starts use the regular GitHub latest-release channel again.
+
 ## Privacy and local data
 
 Winget Studio stores its icon cache, settings, update history, and related local state under `%LOCALAPPDATA%\WingetStudio`. The application itself does not send telemetry. Global WinGet settings and Group Policy-managed values are not overwritten without an explicit user action.
