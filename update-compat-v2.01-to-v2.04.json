@@ -1,8 +1,8 @@
 {
-  "version": "2.04",
-  "title": "Winget Studio 2.04 — provider controls and update preview",
-  "notes": "One-time compatibility feed for affected 2.01 installations. Version 2.04 contains the complete updater correction and the current feature release.",
-  "publishedAt": "2026-08-15T14:17:09Z",
-  "installerUrl": "https://github.com/swayze-sys/Winget-Studio/releases/download/v2.04/WingetStudio-Setup.exe",
-  "releaseUrl": "https://github.com/swayze-sys/Winget-Studio/releases/tag/v2.04"
+  "version": "2.05",
+  "title": "Winget Studio 2.05 - provider dropdown and history tools",
+  "notes": "Provider dropdown with checkboxes, robust PowerShell Gallery search, selectable update history, CSV export, saved suppression management, wider settings and parser correction.",
+  "publishedAt": "2026-08-15T15:34:07Z",
+  "installerUrl": "https://github.com/swayze-sys/Winget-Studio/releases/download/v2.05/WingetStudio-Setup.exe",
+  "releaseUrl": "https://github.com/swayze-sys/Winget-Studio/releases/tag/v2.05"
 }
