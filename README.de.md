@@ -1,7 +1,7 @@
 # Winget Studio
 
 Autor und Entwickler: **Sven Philipp**  
-Aktuelle Anwendungsversion: **2.02**
+Aktuelle Anwendungsversion: **2.03**
 
 Eine lokale WinUI-3-Anwendung zur übersichtlichen Verwaltung installierter WinGet-Pakete.
 
@@ -35,6 +35,7 @@ Eine lokale WinUI-3-Anwendung zur übersichtlichen Verwaltung installierter WinG
 - Zusätzliche Provider für npm, Chocolatey, Pip/PyPI, globale .NET Tools und PowerShell Gallery
 - Parallele freie Suche über WinGet und alle verfügbaren Zusatzprovider; Katalogsuche und Installationsstatus werden je Provider ebenfalls gleichzeitig abgefragt
 - Schokoladentafel als eindeutiges Chocolatey-Symbol in der Provider-Spalte
+- Kollisionsfreie App-Updates durch einen eigenen temporären Ordner pro Setup-Download
 - Providerfilter und – soweit vom Katalog geliefert – Sortierung nach Popularität oder Downloads
 - Eigenes Tab „Programme verwalten“ mit Suche, Details, bestätigter Deinstallation und Herstellerfunktion zum Ändern/Reparieren
 - Live-Anzeige der zuletzt ausgegebenen WinGet-Zeile direkt unter dem Fortschrittsbalken
