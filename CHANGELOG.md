@@ -2,6 +2,17 @@
 
 All notable user-facing changes are documented here.
 
+## 2.03 — 2026-08-15
+
+### App update reliability
+
+- Each setup download now uses a unique temporary directory, preventing automatic and manual checks or multiple processes from locking the same installer path.
+- Installer targets are created exclusively and existing files are never silently overwritten.
+- Fixed the clean publish pipeline so WinUI XBF/PRI resources, the Admin Helper, and the Notification Host are always included.
+- Version 2.03 is a real version increment, allowing installed 2.02 builds to detect the updater correction.
+- Added a one-time compatibility feed that lets affected 2.01 installations bypass their legacy digest-lock bug and update directly to 2.03.
+- Verified the corrected release with all 88 automated tests.
+
 ## 2.02 — 2026-08-15
 
 ### Discovery and provider search
