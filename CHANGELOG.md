@@ -11,6 +11,7 @@ All notable user-facing changes are documented here.
 - Provider failures remain isolated so successful results from other sources are preserved.
 - Chocolatey now uses a chocolate-bar symbol in the Provider column.
 - Bumped the application and installer to 2.02 so existing 2.01 installations detect the release as an update.
+- Fixed release-tag normalization for GitHub tags written as either `v2.02` or `v.2.02`; the compatible `v2.02` release is published as Latest for installed 2.01 clients.
 - Verified the release build with all 87 automated tests.
 
 ## 2.01 — 2026-08-14
