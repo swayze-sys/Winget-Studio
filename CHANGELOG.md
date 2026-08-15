@@ -25,6 +25,7 @@ All notable user-facing changes are documented here.
 - The bundle builder accepts versioned runtime filenames and stores them under a stable bundle name.
 - The Settings window is standardized at 1248 × 920.
 - A dedicated Updates tab can check for Winget Studio releases at startup or on demand.
+- Rebuilt the setup bootstrapper with the correct `v.2.01` GitHub asset URLs embedded, then republished the online installer, offline bundle, manifest, and build metadata with matching SHA-256 digests.
 
 ## 1.9.9 — 2026-08-13
 
