@@ -1,7 +1,7 @@
 # Winget Studio
 
 Autor und Entwickler: **Sven Philipp**  
-Aktuelle Anwendungsversion: **2.06**
+Aktuelle Anwendungsversion: **2.07**
 
 Eine lokale WinUI-3-Anwendung zur übersichtlichen Verwaltung installierter WinGet-Pakete.
 
