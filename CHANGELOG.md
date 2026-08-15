@@ -2,6 +2,25 @@
 
 All notable user-facing changes are documented here.
 
+## 2.04 — 2026-08-15
+
+### Discovery and provider control
+
+- Provider checkboxes select WinGet, Chocolatey, npm, pip/PyPI, .NET Tool and PowerShell Gallery independently.
+- Live provider status shows search progress, result count, elapsed time, cache use, unavailable providers and failures while all selected sources continue to run concurrently.
+
+### Package details and trust
+
+- A new Discover details action loads publisher, description, project page, license, release notes, installer type, architecture and release date from WinGet where available.
+- External providers link directly to their package pages.
+- Trust guidance distinguishes Microsoft Store packages, WinGet manifests and community providers without claiming that a not-yet-downloaded installer signature has been verified.
+
+### Update preview and setup
+
+- Single and multi-package updates show planned version changes, sources, publishers, running processes and active installer options before elevation or execution.
+- App setup no longer asks for a language in `/update` mode; it reuses the saved installer language and falls back to the Windows UI language.
+- Verified the clean release with all 91 automated tests.
+
 ## 2.03 — 2026-08-15
 
 ### App update reliability
