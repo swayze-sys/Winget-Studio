@@ -10,7 +10,7 @@ Winget Studio is a modern WinUI 3 desktop application for discovering, monitorin
 - Select one or many updates and follow live WinGet output and progress.
 - Use the Update Advisor for unknown versions, installer technology changes, running processes, pins, network issues, and other common failures.
 - Discover and install applications from curated categories.
-- Use WinGet alongside supported Chocolatey, npm, pip, .NET Tool, and PowerShell Gallery providers.
+- Search WinGet and all available supported Chocolatey, npm, pip, .NET Tool, and PowerShell Gallery providers concurrently.
 - Keep the main interface in the user context while an authenticated helper performs operations that require elevation.
 - Inspect command, process, stdout/stderr, exit-code, update-history, and diagnostic information.
 - Import and export portable application lists.
