@@ -3,11 +3,11 @@
   "product": "Winget Studio",
   "version": "2.02",
   "architecture": "x64",
-  "payloadUrl": "https://github.com/swayze-sys/Winget-Studio/releases/download/v.2.02/WingetStudio-Payload-2.02.zip",
-  "sha256": "5c416c4b52f5529ecf4cdcb1e5f08040380e127f464e53b37f3e28b19443ecdf",
-  "contentSha256": "44947a8ad4f35649dcfdb9a3ed3de464fb6b719e74c969e0d7f2db433aca2238",
-  "size": 84329506,
-  "musicUrl": "https://github.com/swayze-sys/Winget-Studio/releases/download/v.2.02/WingetStudio-Installer-Theme.mp3",
+  "payloadUrl": "https://github.com/swayze-sys/Winget-Studio/releases/download/v2.02/WingetStudio-Payload-2.02.zip",
+  "sha256": "a4ed0e2831983209349ca3378b19cfcde4988f061ccd2a2851f9542d391fc501",
+  "contentSha256": "3f449042abf8567561c5d17056aff9334cda744e9bdbbf5dcc2dd34e98d80df0",
+  "size": 84329549,
+  "musicUrl": "https://github.com/swayze-sys/Winget-Studio/releases/download/v2.02/WingetStudio-Installer-Theme.mp3",
   "musicSha256": "eec57b6bb4d297884c16269c9b13ec30063c6f17343fd4f80c4a459455de9684",
   "musicSize": 10229688
 }
