@@ -1,3 +1,13 @@
+## 2.05 – Provider-Auswahl, Verlaufsexport und Update-Regeln
+
+- Provider-Auswahl als kompaktes Dropdown mit Checkboxen direkt neben der Suchleiste.
+- PowerShell Gallery nutzt die öffentliche Gallery-API; Status und Fehler werden nachvollziehbar angezeigt.
+- Updateverlauf: Zeilen auswählen, vollständige Fehlermeldungen kopieren und alle Spalten als CSV exportieren.
+- Gespeicherte Aussetzungen pro Programm werden unter Update-Regeln aufgelistet und können entfernt werden.
+- Einstellungen: Tab „Erweitert“, größere Standardgröße, 7-Tage-Aufbewahrung und 90 Tage als Standard.
+- Tabellenlayout für Version/Exit-Code verbessert; Parser verhindert, dass Quellen in Versionswerte laufen.
+- About-Dialog mit großem Winget-Studio-Logo.
+
 # Changelog
 
 All notable user-facing changes are documented here.
