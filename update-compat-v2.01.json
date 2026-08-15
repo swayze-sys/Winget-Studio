@@ -1,8 +1,8 @@
 {
   "version": "2.02",
-  "title": "Winget Studio 2.02 update compatibility fix",
+  "title": "Winget Studio 2.02 final updater compatibility build",
   "notes": "One-time compatibility feed for affected 2.01 installations. Version 2.02 fixes GitHub tag normalization and the setup-download file lock.",
-  "publishedAt": "2026-08-15T13:23:11Z",
-  "installerUrl": "https://github.com/swayze-sys/Winget-Studio/releases/download/v2.02/WingetStudio-Setup.exe",
-  "releaseUrl": "https://github.com/swayze-sys/Winget-Studio/releases/tag/v2.02"
+  "publishedAt": "2026-08-15T13:26:54Z",
+  "installerUrl": "https://github.com/swayze-sys/Winget-Studio/releases/download/v2.02-final/WingetStudio-Setup.exe",
+  "releaseUrl": "https://github.com/swayze-sys/Winget-Studio/releases/tag/v2.02-final"
 }
