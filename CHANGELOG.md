@@ -1,3 +1,11 @@
+## 2.06 – UI- und Parserkorrekturen
+
+- About-Dialog mit sichtbarem Logo und direkter Updateprüfung.
+- Providerstatus vollständig und kompakt; fehlerhafte Provider-Kodierung entfernt.
+- Auswahl im Updateverlauf optisch hervorgehoben.
+- WinGet-Versionsparser korrigiert, damit verschobene Tabellenspalten keine doppelten Versionswerte erzeugen.
+- Theme-Schalter leicht nach links versetzt.
+
 ## 2.05 – Provider-Auswahl, Verlaufsexport und Update-Regeln
 
 - Provider-Auswahl als kompaktes Dropdown mit Checkboxen direkt neben der Suchleiste.
