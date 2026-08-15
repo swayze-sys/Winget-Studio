@@ -1,7 +1,7 @@
 # Winget Studio
 
 Autor und Entwickler: **Sven Philipp**  
-Aktuelle Anwendungsversion: **2.04**
+Aktuelle Anwendungsversion: **2.05**
 
 Eine lokale WinUI-3-Anwendung zur übersichtlichen Verwaltung installierter WinGet-Pakete.
 
@@ -64,6 +64,10 @@ Eine lokale WinUI-3-Anwendung zur übersichtlichen Verwaltung installierter WinG
 - Direkte Anzeige erkannter WinGet-/Hersteller-Installationsprotokolle im Advisory-Dialog
 - Markier- und kopierbarer Text in allen Spalten des Prozess- und Fehlerprotokolls
 - Erkennung häufiger Winget-Fehler wie unbekannter Version, Installerfehler, Technologiewechsel, nicht anwendbarem Update, gesperrten Dateien, paralleler Installation, Pins, Netzwerk- und Speicherproblemen
+
+- Kompakte Provider-Auswahl mit Checkboxen, robuste PowerShell-Gallery-Suche sowie Provider-Status und Laufzeit.
+- Updateverlauf mit Mehrfachauswahl, vollständigem Kopieren und CSV-Export.
+- Gespeicherte Update-Aussetzungen können in den Einstellungen eingesehen und gelöscht werden.
 
 ## Voraussetzungen
 
