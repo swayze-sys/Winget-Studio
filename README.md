@@ -48,7 +48,7 @@ The updater accepts HTTPS release assets whose filename contains `Setup` and end
 The original 2.01 updater does not normalize tags written as `v.2.02` correctly and keeps a downloaded setup file locked while validating a GitHub-provided digest. Both defects are fixed in 2.02. To exercise the built-in updater once from 2.01, close Winget Studio and start it from PowerShell with the process-only compatibility feed:
 
 ```powershell
-$env:WINGET_STUDIO_UPDATE_FEED='https://raw.githubusercontent.com/swayze-sys/Winget-Studio/main/update-compat-v2.01.json'
+$env:WINGET_STUDIO_UPDATE_FEED='https://raw.githubusercontent.com/swayze-sys/Winget-Studio/main/update-compat-v2.01-final.json'
 & 'C:\Program Files\Winget Studio\WingetStudio.exe'
 ```
 
