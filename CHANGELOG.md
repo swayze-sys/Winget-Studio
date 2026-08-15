@@ -1,3 +1,9 @@
+## 2.07 – Quellenverwaltung und Quellenaktualisierung
+
+- Quellen aktualisieren verarbeitet WinGet-Quellen einzeln und meldet fehlerhafte Quellen mit Namen.
+- Quellenverwaltung gruppiert WinGet sowie zusätzliche Provider-Standardquellen.
+- NuGet.org ist standardmäßig aktiviert; das Einstellungsfenster wurde für die erweiterte Liste vergrößert.
+
 ## 2.06 – UI- und Parserkorrekturen
 
 - About-Dialog mit sichtbarem Logo und direkter Updateprüfung.
