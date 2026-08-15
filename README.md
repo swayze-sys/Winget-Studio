@@ -2,7 +2,7 @@
 
 Winget Studio is a modern WinUI 3 desktop application for discovering, monitoring, installing, updating, and diagnosing Windows applications through WinGet and supported additional package providers.
 
-**Current release:** 2.02 · [Release notes](https://github.com/swayze-sys/Winget-Studio/releases/tag/v.2.02) · [Deutsch](README.de.md)
+**Current release:** 2.02 · [Release notes](https://github.com/swayze-sys/Winget-Studio/releases/tag/v2.02) · [Deutsch](README.de.md)
 
 ## Highlights
 
@@ -30,8 +30,8 @@ Winget Studio is a modern WinUI 3 desktop application for discovering, monitorin
 
 Download the current release from [GitHub Releases](https://github.com/swayze-sys/Winget-Studio/releases/latest).
 
-- [WingetStudio-WebSetup.exe](https://github.com/swayze-sys/Winget-Studio/releases/download/v.2.02/WingetStudio-WebSetup.exe) is the small online installer. Its embedded manifest uses the public `v.2.02` release URLs and verifies the downloaded payload with SHA-256.
-- [WingetStudio-Setup-2.02.zip](https://github.com/swayze-sys/Winget-Studio/releases/download/v.2.02/WingetStudio-Setup-2.02.zip) is the complete offline bundle. Extract it fully and run `WingetStudio-Setup.exe` from the extracted directory.
+- [WingetStudio-WebSetup.exe](https://github.com/swayze-sys/Winget-Studio/releases/download/v2.02/WingetStudio-WebSetup.exe) is the small online installer. Its embedded manifest uses the public `v2.02` release URLs and verifies the downloaded payload with SHA-256.
+- [WingetStudio-Setup-2.02.zip](https://github.com/swayze-sys/Winget-Studio/releases/download/v2.02/WingetStudio-Setup-2.02.zip) is the complete offline bundle. Extract it fully and run `WingetStudio-Setup.exe` from the extracted directory.
 
 The installer supports component checks, SHA-256 payload verification, optional dependencies, Windows uninstallation, and repair/update operation through the registered installation path.
 
