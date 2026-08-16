@@ -1,3 +1,13 @@
+## Fleet development branch — 2.10.0 (private, unreleased)
+
+The private fleet-management branch documents and implements the Fleet management work separately from the public client release line.
+
+- Dedicated Fleet window with device registration, embedded NetworkDeepscan discovery, device database, groups, policies, rollouts, protocol/debug and Audit/Advisor areas.
+- Self-contained HTTPS Fleet Agent on port 8765 with heartbeat status, inventory, progress, logs, configuration and targeted updates.
+- Agent-first communication with WinRM, WinRS and DCOM as explicit diagnostics fallbacks.
+- Device inspection with a client-style Programs view, icons, search, selection, columns, details and WinGet updates.
+- Complete Fleet/Agent diagnostics with searchable, scrollable, selectable, copyable and exportable logs.
+
 ## 2.10.0 — 2026-08-16 (Fleet management, agent inventory and diagnostics)
 
 ### Fleet management
