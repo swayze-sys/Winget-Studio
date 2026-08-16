@@ -1,70 +1,45 @@
 # Winget Studio
 
-Winget Studio is a modern WinUI 3 desktop application for discovering, monitoring, installing, updating, and diagnosing Windows applications through WinGet and supported additional package providers.
+Winget Studio is a WinUI 3 desktop application for discovering, installing, updating and diagnosing Windows applications through WinGet and additional package providers.
 
-**Current release:** 2.07 · [Release notes](https://github.com/swayze-sys/Winget-Studio/releases/tag/v2.07) · [Deutsch](README.de.md)
+**Current release:** 2.10.0 · [Latest release](https://github.com/swayze-sys/Winget-Studio/releases/latest) · [Deutsch](README.de.md)
 
 ## Highlights
 
-- Compact provider dropdown with checkboxes keeps the search row short while retaining per-provider control.
-- PowerShell Gallery discovery uses the public Gallery API with robust result parsing and clear provider status.
-- Select update-history rows, copy full diagnostics, or export every column to CSV.
-- Review and remove saved per-program update suppression rules from Settings.
+- Search WinGet, Chocolatey, npm, pip/PyPI, .NET Tool and PowerShell Gallery independently, with concurrent provider searches and live status.
+- Review installed and available versions in card or sortable list views, select one or many packages, and follow command output, progress and exit codes.
+- Use the Update Advisor for common WinGet, installer, process, pin, network and file-lock failures.
+- Keep a searchable, selectable, copyable and CSV-exportable update history with complete failure details.
+- Configure sources, pins, filters, scheduled runs, update channels, language, appearance and diagnostic retention.
+- Inspect package details, publisher information, release notes, trust/signature state and installation paths.
+- Use the Fleet management area for device registration, embedded NetworkDeepscan discovery, device groups and policies, agent status, inventory, inspection and targeted updates.
+- The HTTPS Fleet Agent returns heartbeat, user, operating system, network identity, software inventory, progress, logs and update results. WinRM/WinRS/DCOM remain explicit diagnostic fallbacks.
+- Inspect a registered device in a dedicated view with overview, agent diagnostics, protocol and a client-style Programs view with search, icons, columns, selection and WinGet updates.
+- Fleet data is kept locally in `%LOCALAPPDATA%\\WingetStudio\\fleet-devices.json`; the agent stores inventory, settings and logs on the target under `%PROGRAMDATA%\\WingetStudio\\FleetAgent`.
 
-- Review installed and available versions in an icon grid or sortable list.
-- Select one or many updates and follow live WinGet output and progress.
-- Use the Update Advisor for unknown versions, installer technology changes, running processes, pins, network issues, and other common failures.
-- Discover applications from curated categories and inspect publisher, description, project, license, release, installer and trust information before installation.
-- Select WinGet, Chocolatey, npm, pip, .NET Tool and PowerShell Gallery independently, search them concurrently, and see live result counts and elapsed time for every provider.
-- Keep the main interface in the user context while an authenticated helper performs operations that require elevation.
-- Inspect command, process, stdout/stderr, exit-code, update-history, and diagnostic information.
-- Import and export portable application lists.
-- Configure sources, pins, filters, scheduled update runs, language, appearance, network behavior, and diagnostic retention.
-- Receive grouped Windows notifications for completed scheduled runs.
-- Check the GitHub release channel and install a confirmed Winget Studio update through the existing setup workflow.
+See the [Fleet management documentation](https://github.com/swayze-sys/Winget-Studio-Source/blob/fleet-management/Documentation/Fleet-Management.en.md) for registration, communication, inventory and diagnostics. Large-scale server orchestration and formal critical-update approvals remain planned expansions; 2.10.0 focuses on reliable single-device Fleet operations.
 
 ## Requirements
 
-- Windows 10 version 19041 or later; Windows 11 is recommended.
-- x64 system.
-- WinGet / Microsoft App Installer for WinGet package operations.
-- .NET 10 Desktop Runtime and Windows App SDK Runtime. The installer can install required components when needed.
-- The corresponding package manager for optional Chocolatey, npm, pip, .NET Tool, or PowerShell Gallery integration.
+- Windows 10 build 19041 or later; Windows 11 is recommended.
+- x64 system with WinGet / Microsoft App Installer.
+- .NET 10 Desktop Runtime and Windows App SDK Runtime as required by the installer.
+- Optional provider tools (Chocolatey, Node.js/npm, Python/pip, .NET SDK or PowerShellGet) for their respective catalogs.
 
 ## Installation
 
-Download the current release from [GitHub Releases](https://github.com/swayze-sys/Winget-Studio/releases/latest).
-
-- [WingetStudio-WebSetup.exe](https://github.com/swayze-sys/Winget-Studio/releases/download/v2.07/WingetStudio-WebSetup.exe) is the small online installer. Its embedded manifest uses the public `v2.07` release URLs and verifies the downloaded payload with SHA-256.
-- [WingetStudio-Setup-2.07.zip](https://github.com/swayze-sys/Winget-Studio/releases/download/v2.07/WingetStudio-Setup-2.07.zip) is the complete offline bundle. Extract it fully and run `WingetStudio-Setup.exe` from the extracted directory.
-
-The installer supports component checks, SHA-256 payload verification, optional dependencies, Windows uninstallation, and repair/update operation through the registered installation path.
+Download the current setup from [GitHub Releases](https://github.com/swayze-sys/Winget-Studio/releases/latest). The offline bundle contains the payload and can be extracted before running `WingetStudio-Setup.exe`; the web setup downloads and verifies the same payload. The installer performs SHA-256 validation, preserves user data during updates and offers the optional Fleet Agent component.
 
 ## Updates
 
-The installed application reads `update-channel.json` next to `WingetStudio.exe`. Version 2.07 uses the public latest-release endpoint:
-
-`https://api.github.com/repos/swayze-sys/Winget-Studio/releases/latest`
-
-The updater accepts HTTPS release assets whose filename contains `Setup` and ends in `.exe`. It asks for confirmation, downloads the selected setup executable, verifies it, and invokes the installer with the update flow instead of replacing individual application files.
-
-### One-time update path for installed 2.01 builds
-
-The original 2.01 updater does not normalize some legacy tags correctly and can keep a downloaded setup file locked while validating a GitHub-provided digest. Version 2.07 contains the complete updater correction. To update once from 2.01, close every Winget Studio window and start exactly one instance from PowerShell with the process-only compatibility feed:
-
-```powershell
-$env:WINGET_STUDIO_UPDATE_FEED='https://raw.githubusercontent.com/swayze-sys/Winget-Studio/main/update-compat-v2.01-to-v2.07.json'
-& 'C:\Program Files\Winget Studio\WingetStudio.exe'
-```
-
-Wait for the automatic update prompt, or use **Settings → Updates → Check now** once. The environment override exists only for that PowerShell process tree; normal 2.07 starts use the regular GitHub latest-release channel again.
+Winget Studio checks the configured GitHub stable or pre-release channel and applies confirmed updates through the existing installer. The updater never replaces individual application files.
 
 ## Privacy and local data
 
-Winget Studio stores its icon cache, settings, update history, and related local state under `%LOCALAPPDATA%\WingetStudio`. The application itself does not send telemetry. Global WinGet settings and Group Policy-managed values are not overwritten without an explicit user action.
+Winget Studio stores settings, icon cache, update history and Fleet data locally. It sends no telemetry. The Fleet Agent stores its inventory, settings and logs under `%PROGRAMDATA%\\WingetStudio\\FleetAgent`.
 
 ## Release history
 
-See [CHANGELOG.md](CHANGELOG.md) for the current release changes and earlier milestones.
+See [CHANGELOG.md](CHANGELOG.md) for the complete release history.
 
 Winget Studio is authored and maintained by **Sven Philipp**.
