@@ -1,7 +1,7 @@
 # Winget Studio
 
 Autor und Entwickler: **Sven Philipp**  
-Aktuelle Anwendungsversion: **2.07**
+Aktuelle Anwendungsversion: **2.10.0**
 
 Eine lokale WinUI-3-Anwendung zur übersichtlichen Verwaltung installierter WinGet-Pakete.
 
@@ -33,13 +33,6 @@ Eine lokale WinUI-3-Anwendung zur übersichtlichen Verwaltung installierter WinG
 - Permanente Statusleiste mit aktuellem Arbeitsschritt, Paketfortschritt und zusammengefasstem Ergebnis
 - Repository-Katalog „Apps entdecken“ mit Suche, Quellenangabe, installierter Kennzeichnung und Direktinstallation
 - Zusätzliche Provider für npm, Chocolatey, Pip/PyPI, globale .NET Tools und PowerShell Gallery
-- Parallele freie Suche über WinGet und alle verfügbaren Zusatzprovider; Katalogsuche und Installationsstatus werden je Provider ebenfalls gleichzeitig abgefragt
-- Schokoladentafel als eindeutiges Chocolatey-Symbol in der Provider-Spalte
-- Kollisionsfreie App-Updates durch einen eigenen temporären Ordner pro Setup-Download
-- Frei wählbare Provider mit Live-Status, Trefferzahl und Laufzeit pro paralleler Suche
-- Erweiterte Discover-Paketdetails mit Projekt-, Lizenz-, Installer- und Vertrauensinformationen
-- Update-Vorschau für Versionswechsel, Quellen, Herausgeber, laufende Prozesse und Installeroptionen
-- Keine erneute Sprachabfrage des Installers im App-Update-Modus
 - Providerfilter und – soweit vom Katalog geliefert – Sortierung nach Popularität oder Downloads
 - Eigenes Tab „Programme verwalten“ mit Suche, Details, bestätigter Deinstallation und Herstellerfunktion zum Ändern/Reparieren
 - Live-Anzeige der zuletzt ausgegebenen WinGet-Zeile direkt unter dem Fortschrittsbalken
@@ -64,10 +57,20 @@ Eine lokale WinUI-3-Anwendung zur übersichtlichen Verwaltung installierter WinG
 - Direkte Anzeige erkannter WinGet-/Hersteller-Installationsprotokolle im Advisory-Dialog
 - Markier- und kopierbarer Text in allen Spalten des Prozess- und Fehlerprotokolls
 - Erkennung häufiger Winget-Fehler wie unbekannter Version, Installerfehler, Technologiewechsel, nicht anwendbarem Update, gesperrten Dateien, paralleler Installation, Pins, Netzwerk- und Speicherproblemen
+- Flotteninventar mit Agent-Status, detaillierter WinGet-/Registry-Diagnose, vollständiger Update-Fehlerantwort und übertragbaren Programmsymbolen aus dem Remote-Agenten
 
-- Kompakte Provider-Auswahl mit Checkboxen, robuste PowerShell-Gallery-Suche sowie Provider-Status und Laufzeit.
-- Updateverlauf mit Mehrfachauswahl, vollständigem Kopieren und CSV-Export.
-- Gespeicherte Update-Aussetzungen können in den Einstellungen eingesehen und gelöscht werden.
+## Flottenverwaltung
+
+Die Flottenverwaltung ist ein eigener Verwaltungsbereich für mehrere Windows-Geräte. Sie bündelt Geräte-Registrierung, Network Discovery, Agent-Kommunikation, Inventar, gezielte Updates und vollständige Diagnose in einer lokalen Datenbasis.
+
+- **Geräte registrieren:** manuelle Eingabe oder Network Discovery über das eingebettete `NetworkDeepscan.ps1` mit Computername, IP, MAC, Hersteller, DNS/NetBIOS, ICMP, SMB, Gerätetyp, Konfidenz und Erkennungsgrund.
+- **Geräteübersicht:** Status aktualisieren, Agent pushen, Gerät inspizieren, fehlgeschlagene Vorgänge wiederholen und Geräte gesammelt löschen. Typen wie Router, SMB/NAS, Windows-Client, Mobilgerät oder unbekannt werden symbolisch dargestellt.
+- **Agent zuerst:** Der HTTPS-Fleet-Agent liefert Heartbeat, Benutzer, Betriebssystem, Netzwerkdaten, Gerätetyp, Softwareinventar, Fortschritt, Logs und Updateergebnisse. PowerShell-Remoting, WinRS und DCOM bleiben Diagnose-Fallbacks.
+- **Gerät inspizieren:** Eigene Detailansicht mit Übersicht, Agent-Diagnose, Protokoll und Programme. Die Programmliste unterstützt Suche, Auswahl, Karten-/Listenansicht, Spalten, Icons, Details, Versionsnotizen, Inventaraktualisierung und gezielte WinGet-Updates.
+- **Nachvollziehbare Diagnose:** PowerShell-Ausgabe, Fleet-Protokoll, Agent-Status, Setup-, Fehler-, Update- und Inventar-Logs sind getrennt durchsuchbar, scrollbar, markierbar, kopierbar und exportierbar. Der Advisor erhält vollständige Agent- und WinGet-Fehlerantworten.
+- **Lokale Daten:** Geräte, Gruppen, Richtlinien, Rollout-Wellen und Protokolle liegen in `%LOCALAPPDATA%\\WingetStudio\\fleet-devices.json`. Agent-Inventar, Einstellungen und Agent-Logs liegen auf dem Zielgerät unter `%PROGRAMDATA%\\WingetStudio\\FleetAgent`.
+
+Eine ausführliche Beschreibung der Architektur und des empfohlenen Ablaufs steht in [Fleet-Management-Dokumentation](https://github.com/swayze-sys/Winget-Studio-Source/blob/fleet-management/Documentation/Fleet-Management.md). Die mehrstufige serverseitige Orchestrierung großer Rollouts und formale Freigabeprozesse für kritische Updates sind als weiterer Ausbau vorgesehen; Version 2.10.0 konzentriert sich auf sichere Einzelgeräte-Kommunikation, Inventar, Inspektion, Diagnose und gezielte Agent-Updates.
 
 ## Voraussetzungen
 
@@ -99,6 +102,7 @@ Das Projekt verwendet die Windows App SDK Runtime selbstenthaltend. Winget Studi
 
 ## Lokale Daten
 
-Icon-Cache, Einstellungen und Updateverlauf liegen unter `%LOCALAPPDATA%\WingetStudio`. Winget Studio selbst sendet keine Telemetriedaten. Globale WinGet-Einstellungen und durch Gruppenrichtlinien verwaltete Werte werden nicht ungefragt überschrieben.
+Icon-Cache, Einstellungen und Updateverlauf liegen unter `%LOCALAPPDATA%\WingetStudio`. Remote-Agent-Symbole werden zusätzlich unter `%LOCALAPPDATA%\WingetStudio\IconCache\Fleet` materialisiert; der Discovery-Cache unter `IconCache\Discovery` enthält `.missing`-Marker, wenn Simple Icons für einen Paketnamen keine Grafik liefert. Winget Studio selbst sendet keine Telemetriedaten. Globale WinGet-Einstellungen und durch Gruppenrichtlinien verwaltete Werte werden nicht ungefragt überschrieben.
 
 Die zusätzlichen Provider sind eigenständige Paketmanager und keine nativen `winget source`-Einträge. Bei Pip unterstützt die offizielle CLI keine allgemeine Freitextsuche mehr; dort wird der eingegebene Paketname gezielt bei PyPI abgefragt. „Ändern“ ist nur verfügbar, wenn das Programm einen `ModifyPath` in Windows registriert hat.
+
