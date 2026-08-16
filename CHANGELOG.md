@@ -1,3 +1,23 @@
+## 2.10.0 — 2026-08-16 (Fleet management, agent inventory and diagnostics)
+
+### Fleet management
+- Added a dedicated Fleet window with overview, devices, groups and policies, rollouts, protocol/debug and audit/advisor areas.
+- Registered devices are stored in a local Fleet database with stable identity de-duplication, selectable columns, sorting, filters and persistent protocol data.
+- Network Discovery uses the embedded NetworkDeepscan PowerShell script and exposes IP, MAC, vendor, DNS/NetBIOS, ICMP, SMB, device type, confidence and detection reason.
+- Device inspection includes an overview, live agent diagnostics, protocol and a Programs view with search, cards/list mode, icons, details, selection, column controls and targeted updates.
+
+### Fleet Agent and remote communication
+- Added a self-contained HTTPS Fleet Agent on port 8765 with tray status, Start-menu integration, heartbeat and inventory settings.
+- Agent-first status and inventory calls return user, OS, IP, MAC, vendor, device type, software inventory, progress, logs and update results. WinRM, WinRS and DCOM remain diagnostic fallbacks.
+- Fleet logs and agent log files are searchable, scrollable, selectable, copyable and exportable; complete STDOUT, STDERR, exit codes and stack traces are retained for failures.
+- Agent update requests now use the same web-JSON conventions as the client, preventing valid package IDs from being deserialized as an empty request.
+
+### Inventory, icons and update reliability
+- WinGet is the primary inventory provider; Registry is an explicitly labelled fallback.
+- Remote package icons are transferred as embedded data and materialized in the local Fleet icon cache; missing Simple Icons are recorded as `.missing` discovery markers.
+- Long-running inventory operations report phase, detail and percentage progress until the agent finishes.
+- Version formatting keeps semantic versions such as 2.10.0 intact while retaining legacy 2.08 display compatibility.
+
 ## 2.07 – Quellenverwaltung und Quellenaktualisierung
 
 - Quellen aktualisieren verarbeitet WinGet-Quellen einzeln und meldet fehlerhafte Quellen mit Namen.
