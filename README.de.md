@@ -1,7 +1,8 @@
 # Winget Studio
 
 Autor und Entwickler: **Sven Philipp**  
-Aktuelle Anwendungsversion: **2.10.0**
+Aktuelle öffentliche Release-Version: **2.08.5**  
+Fleet-Entwicklungsstand: **2.10.0** im privaten fleet-management-Branch
 
 Eine lokale WinUI-3-Anwendung zur übersichtlichen Verwaltung installierter WinGet-Pakete.
 
@@ -70,7 +71,7 @@ Die Flottenverwaltung ist ein eigener Verwaltungsbereich für mehrere Windows-Ge
 - **Nachvollziehbare Diagnose:** PowerShell-Ausgabe, Fleet-Protokoll, Agent-Status, Setup-, Fehler-, Update- und Inventar-Logs sind getrennt durchsuchbar, scrollbar, markierbar, kopierbar und exportierbar. Der Advisor erhält vollständige Agent- und WinGet-Fehlerantworten.
 - **Lokale Daten:** Geräte, Gruppen, Richtlinien, Rollout-Wellen und Protokolle liegen in `%LOCALAPPDATA%\\WingetStudio\\fleet-devices.json`. Agent-Inventar, Einstellungen und Agent-Logs liegen auf dem Zielgerät unter `%PROGRAMDATA%\\WingetStudio\\FleetAgent`.
 
-Eine ausführliche Beschreibung der Architektur und des empfohlenen Ablaufs steht in [Fleet-Management-Dokumentation](https://github.com/swayze-sys/Winget-Studio-Source/blob/fleet-management/Documentation/Fleet-Management.md). Die mehrstufige serverseitige Orchestrierung großer Rollouts und formale Freigabeprozesse für kritische Updates sind als weiterer Ausbau vorgesehen; Version 2.10.0 konzentriert sich auf sichere Einzelgeräte-Kommunikation, Inventar, Inspektion, Diagnose und gezielte Agent-Updates.
+Eine ausführliche Beschreibung des Fleet-Entwicklungsstands steht in der [Fleet-Management-Dokumentation](https://github.com/swayze-sys/Winget-Studio-Source/blob/fleet-management/Documentation/Fleet-Management.md). Die Fleet-Funktionen gehören zum privaten Entwicklungszweig und sind nicht Bestandteil des öffentlichen 2.08.5-Release. Die mehrstufige serverseitige Orchestrierung großer Rollouts und formale Freigabeprozesse für kritische Updates sind als weiterer Ausbau vorgesehen; Version 2.10.0 konzentriert sich auf sichere Einzelgeräte-Kommunikation, Inventar, Inspektion, Diagnose und gezielte Agent-Updates.
 
 ## Voraussetzungen
 
